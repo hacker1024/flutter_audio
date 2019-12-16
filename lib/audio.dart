@@ -343,10 +343,7 @@ class Audio
         // Make sure all the other players is paused
         if (single)
         {
-            players.forEach((uid, player)
-            {
-                await player.pause();
-            });
+            for (AudioPlayer player in players.values) await player.pause();
         }
 
         await player.play(url);
